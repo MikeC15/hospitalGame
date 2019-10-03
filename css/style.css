@@ -1,0 +1,56 @@
+body {
+	background-color: black;
+}
+
+header {
+	display: block;
+	text-align: center;
+	font-size: 80px;
+}
+
+.gameStartScreen {
+	background-image: url("https://i.imgur.com/g96FJYn.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: blue;
+	margin: 0 auto;
+	width: 90%;
+	height: 750px;
+}
+
+.gameContainer {
+	background-image: url("https://cdn.shopify.com/s/files/1/0065/4917/6438/products/a-surgery-room-background_1024x1024@2x.jpg?v=1549231585");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: red;
+	margin: 0 auto;
+	width: 90%;
+	height:750px;
+	display: none;
+	grid-template-columns: 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-areas: ". . . . . . . endButton"
+						 ". . . . . . . ."
+						 ". . . . . . . ."
+						 ". . . . . . . ."
+						 ". . . patient . . . ."
+						 ". . . . . player . ."
+						 ". . . . . . . ."
+						 ". . . . . . . ."
+}
+
+.player {
+	grid-area: player;
+}
+.patient {
+	grid-area: patient;
+}
+
+#game-start {
+	display: block;
+	margin: auto;
+}
+#game-end {
+	grid-area: endButton
+}
+
