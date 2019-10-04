@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Hospital Game</title>
+		<title>End of the Road Asylum</title>
 
 
 		<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -10,21 +10,39 @@
 
 		<!-- START SCREEN -->
 		<div class="gameStartScreen">
-			<header>Mike's Hospital Game!</header>
+			<header id="title">End of the Road Asylum</header>
 			<!-- <input type="text" name="Whats your name"> -->
-			<button id="game-start">Click to begin game.</button>
+			<button id="game-start">New Game</button>
+			<button id="how-to-play">How to Play</button>
+			<button id="exit">Exit</button>
 			
 		</div>
 
-		<!-- GAME -->
+		<!-- DOC OFFICE -->
+		<div class="officeContainer">
+			<header class="headerOffice">THE DOC IS IN</header>
+			<aside class="sidebarLeftOffice">
+				<p>PH computer</p>
+			</aside>
+			<aside class="sidebarRightOffice">
+				<button id="officeToMain">Return to Title</button>
+				<button id="officeToSurgery">Begin Surgery</button>
+			</aside>
+
+			
+
+		</div>
+
+
+		<!-- SURGERY GAME -->
 		<div class="gameContainer">
 			<header class="header"></header>
 			<aside class="sidebar"></aside>
 			<div class="player">
-				<img style="border:0px; height:100px;" src="https://thumbs.dreamstime.com/z/doctor-pixel-art-isolated-white-background-physician-game-style-illustration-medic-vector-design-funny-bit-people-86619973.jpg" />
+				<img style="border:0px; height:200px;" src="https://thumbs.dreamstime.com/z/doctor-pixel-art-isolated-white-background-physician-game-style-illustration-medic-vector-design-funny-bit-people-86619973.jpg" />
 			</div>
 			<div class="patient">
-				<img style="border:0px; height:100px;" src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fvector-pixel-art-patient-isolated-109521355.jpg&f=1&nofb=1" />
+				<img style="border:0px; height:200px;" src="img/HPatientGood.jpg">
 			</div>
 			<button id="game-end">Click to return to title.</button>
 		</div>

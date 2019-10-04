@@ -1,5 +1,13 @@
+@font-face {
+	font-family: 'zombieFont'; /*a name to be used later*/
+	src: url('ufonts.com_zombie-guts.ttf'); /*URL to font*/
+}
+
 body {
 	background-color: black;
+	background-image: url("../img/HBG.gif");
+	background-repeat: no-repeat;
+	font-family: "zombieGuts";
 }
 
 header {
@@ -8,24 +16,87 @@ header {
 	font-size: 80px;
 }
 
+
 .gameStartScreen {
-	background-image: url("https://i.imgur.com/g96FJYn.png");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color: blue;
-	margin: 0 auto;
-	width: 90%;
-	height: 750px;
+	background-color: rgba(133, 98, 135,.85);
+	position: absolute;
+    top: 0;
+    bottom: 15%;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 333px;
+	margin: auto;
+	border: ridge 10px rgb(47, 33, 55);
+	border-radius: 5%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 20%;
+	grid-template-areas: "T T T"
+						 "NG HTP E"
+	
+	
 }
 
-.gameContainer {
-	background-image: url("https://cdn.shopify.com/s/files/1/0065/4917/6438/products/a-surgery-room-background_1024x1024@2x.jpg?v=1549231585");
+.officeContainer {
+	background-image: url(../img/HOffice.png);
 	background-repeat: no-repeat;
 	background-position: center;
-	background-color: red;
-	margin: 0 auto;
-	width: 90%;
-	height:750px;
+	border: ridge 10px rgb(47, 33, 55);
+	border-radius: 5%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 80%;
+	height:666px;
+	margin: auto;
+	display: none;
+	grid-template-columns: 100px 1fr 100px;
+	grid-template-rows: 50px 1fr;
+	grid-template-areas: "left head right"
+						 "left . right"
+}
+.headerOffice{
+	grid-area: head;
+}
+.sidebarLeftOffice {
+	grid-area: left;
+	border: ridge 5px rgb(47, 33, 55);
+	background-color: rgba(133, 98, 135,.85);
+	font-family: "zombieGuts";
+	margin: 8% 0 8% 8%;
+}
+.sidebarRightOffice {
+	grid-area: right;
+	border: ridge 5px rgb(47, 33, 55);
+	background-color: rgba(133, 98, 135,.85);
+	font-family: "zombieGuts";
+	margin: 8% 8% 8% 0;
+}
+/* #officeToMain {
+	grid-area: ;
+}
+#officeToSurgery {
+	grid-area: ;
+} */
+
+.gameContainer {
+	background-image: url("../img/HOperatingRoom.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color:rgb(190, 224, 253);
+	border: ridge 10px rgb(47, 33, 55);
+	border-radius: 5%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 80%;
+	height:666px;
+	margin: auto;
 	display: none;
 	grid-template-columns: 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-rows: 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -39,6 +110,10 @@ header {
 						 ". . . . . . . ."
 }
 
+.officeContainer {
+	display: none;
+}
+
 .player {
 	grid-area: player;
 }
@@ -46,9 +121,33 @@ header {
 	grid-area: patient;
 }
 
+#title {
+	grid-area: T;
+	margin-top: 4%;
+}
 #game-start {
-	display: block;
-	margin: auto;
+	grid-area: NG;
+	border: ridge 10px rgb(47, 33, 55);
+	border-radius: 5%;
+	background-color: rgba(133, 98, 135,.85);
+	font-family: "zombieGuts";
+	margin-bottom: 6px;
+}
+#how-to-play {
+	grid-area: HTP;
+	border: ridge 10px rgb(47, 33, 55);
+	border-radius: 5%;
+	background-color: rgba(133, 98, 135,.85);
+	font-family: "zombieGuts";
+	margin-bottom: 6px;
+}
+#exit {
+	grid-area: E;
+	border: ridge 10px rgb(47, 33, 55);
+	border-radius: 5%;
+	background-color: rgba(133, 98, 135,.85);
+	font-family: "zombieGuts";
+	margin-bottom: 6px;
 }
 #game-end {
 	grid-area: endButton
