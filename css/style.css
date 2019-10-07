@@ -108,6 +108,12 @@ header {
 #officeToSurgery {
 	grid-area: ;
 } */
+#officeToMain, #officeToSurgery {
+	border: ridge 5px rgb(47, 33, 55);
+	border-radius: 5%;
+	background-color: rgba(133, 98, 135,.85);
+	font-family: "zombieGuts";
+}
 
 .gameContainer {
 	background-image: url("../img/HOperatingRoom.png");
@@ -146,13 +152,25 @@ header {
 	grid-area: stats;
 }
 #game-end {
-	grid-area: endButton
+	grid-area: endButton;
+	border: ridge 5px rgb(47, 33, 55);
+	border-radius: 5%;
+	background-color: rgba(133, 98, 135,.85);
+	font-family: "zombieGuts";
 }
 #gameStart {
 	grid-area: startButton;
+	border: ridge 5px rgb(47, 33, 55);
+	border-radius: 5%;
+	background-color: rgba(133, 98, 135,.85);
+	font-family: "zombieGuts";
 }
 #gameRules {
-	grid-area: rules
+	grid-area: rules;
+	border: ridge 5px rgb(47, 33, 55);
+	border-radius: 5%;
+	background-color: rgba(133, 98, 135,.85);
+	font-family: "zombieGuts";
 }
 
 .surgeryStats {
@@ -189,4 +207,5 @@ canvas {
 	border: 1px solid black;
 	background-color: black;
 	display: none;
+	cursor: none;
 }

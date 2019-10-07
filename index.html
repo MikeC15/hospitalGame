@@ -10,9 +10,9 @@
 
 		<div class="surgeryStats">
 			<div class="surgStat">Health: 100</div>
-			<div class="surgStat">STATISTICS</div>
-			<div class="surgStat">STATISTICS</div>
-			<div class="surgStat">STATISTICS</div>
+			<div class="surgStat">Doctor Kills:</div>
+			<div class="surgStat">Doctor Experience:</div>
+			<div class="surgStat">Doctor Money:</div>
 			<!-- <button class="exitGame">Exit Surgery</button> -->
 		</div>
 
@@ -30,15 +30,14 @@
 		<div class="officeContainer">
 			<header class="headerOffice">THE DOC IS IN</header>
 			<aside class="sidebarLeftOffice">
-				<p>Place bought items here</p>
-			</aside>
-			<aside class="sidebarRightOffice">
-				<button id="officeToMain">Return to Title</button>
-				<button id="officeToSurgery">Begin Surgery</button>
-				<p>computer and shop</p>
+				<p>Place doc stats and bought items here</p>
 			</aside>
 
-			
+			<aside class="sidebarRightOffice">
+				<button id="officeToMain">Return to Title</button>
+				<button id="officeToSurgery">Head to O.R.</button>
+				<p>computer and shop</p>
+			</aside>
 
 		</div>
 
@@ -57,7 +56,7 @@
 				<img style="border:0px; height:300px;" src="img/HPatient.png">
 			</div>
 			<button id="game-end">Click to return to title.</button>
-			<button id ="gameStart">Begin!</button>
+			<button id ="gameStart">Begin operating!</button>
 			<button id="gameRules">Surgery Rules</button>
 			
 		</div>
@@ -65,9 +64,9 @@
 		<!-- Surgery direction div -->
 		<div class="gameInstructions">
 			<p>You are the surgeon's blue gloved hand. You will see a mix of blood cells and bleeders in the patient. 
-				You have 30 seconds to save your patient. Click brightest red bleeders to stop your patient from dying. 
-				Keep an eye on the patients health level. If they reach 0 they die. The health will drop more slowly for each bleeder stopped. 
-				If you stop 10 bleeders you win the surgery. Health CAN go negative as long as you resuscitate him in time!</p>
+				You have 30 seconds to save your patient. Hover over the brightest red bleeders to stop your patient from dying, gain some health back and they will turn blue. 
+				Keep an eye on the patients health level, it will drop every second. If they finish surgery with health 0 or under they will die, and it will be on your permanent record.
+				If they have health left at the end of surgery, they survive and you will gain money to spend on upgrades. Health CAN go negative as long as you resuscitate them in time! Careful, if you kill 5 patients you will lose your license!</p>
 			<button class="instructionsButton">Back to surgery room</button>
 		</div>
 

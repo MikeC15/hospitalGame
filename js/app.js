@@ -127,6 +127,14 @@ $(".instructionsButton").on("click", ()=>{
 // 	$("body").css("margin-top", "0");
 // });
 
+$("#exit").on("click", ()=>{
+	alert("HAHAHAHA YOU CAN NEVER LEAVE THE ASYLUM!");
+	location.reload();
+})
+
+$("#how-to-play").on("click", () => {
+	alert("Just play the game.");
+})
 
 // stats for game live
 
@@ -157,7 +165,7 @@ const c = canvas.getContext("2d");
 
 window.addEventListener("mousemove", function (e) {
 	mouse.x = event.x;
-	mouse.y = event.y - 40;
+	mouse.y = event.y - 55;
 });
 
 
@@ -406,18 +414,6 @@ function animate() {
 	doc.x = mouse.x;
 	doc.y = mouse.y;
 	doc.update();
-	// circle1.update();
-	// circle2.x = mouse.x;
-	// circle2.y = mouse.y;
-	// circle2.update();
-
-	// if (getDistance(circle1.x, circle1.y, circle2.x, circle2.y) < circle1.radius + circle2.radius) {
-	//     circle1.color = 'red';
-	// } else {
-	//     circle1.color = "black";
-	// }
-
-	// console.log(getDistance(circle1.x, circle1.y, circle2.x, circle2.y))
 }
 
 
