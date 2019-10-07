@@ -2,14 +2,15 @@ console.log("Linked.");
 
 
 const patient ={
-	health: 100,
+	initialHealth: 100,
+	newHealth: 100,
 	procedure1: "Heart Transplant",
 	procedure2: "ex2",
 	procedure3: "ex3",
 }
 
 const doctor = {
-	damage: 5,
+	damage: 10,
 	patientKills: 0,
 	performSurgery(){
 		//THIS WILL POP UP DIALOG EVERY 10 SECONDS TO MAKE A BIG IMPACT ON SURGERY, only way to kill is failing these.
@@ -68,8 +69,8 @@ $("#gameStart").on("click", () => {
 	$(".surgeryStats").css("display", "inline-block");
 		
 	const health = setInterval(() => {
-		patient.health -= 10;
-		$(".surgStat").eq(0).text(`Health: ${patient.health}`)
+		patient.newHealth -= doctor.damage;
+		$(".surgStat").eq(0).text(`Health: ${patient.newHealth}`)
 	}, 1000);
 	// console.log("clicked")
 	const game = setInterval(() => {
@@ -80,13 +81,19 @@ $("#gameStart").on("click", () => {
 		$("body").css("margin-top", "0");
 		alert("Surgery complete");
 		//results of surgery what happens
-		if(patient.health <= 0){
+		if(patient.newHealth <= 0){
 			alert("Your patient has died!")
-		} else if (patient.health > 0){
+			$(".gameContainer").css("display", "none");
+			$(".officeContainer").css("display", "grid");
+
+		} else if (patient.newHealth > 0){
 			alert("The patient has survived the surgery");
+			$(".gameContainer").css("display", "none");
+			$(".officeContainer").css("display", "grid");
+			
 		}
 
-		patient.health = 100;
+		patient.newHealth = patient.initialHealth;
 		clearInterval(game);
 		clearInterval(health);
 		
@@ -306,9 +313,9 @@ function Circle(x, y, radius, color) {
 				// console.log("inside bloodcell");
 					this.color = "blue";
 				//updates health issues
-					if(patient.health < 100){
-						patient.health += 5;
-						$(".surgStat").eq(0).text(`Health: ${patient.health}`)
+					if(patient.newHealth < 100){
+						patient.newHealth += 5;
+						$(".surgStat").eq(0).text(`Health: ${patient.newHealth}`)
 					}
 				}
 			}
