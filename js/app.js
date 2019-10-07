@@ -66,6 +66,11 @@ $("#gameStart").on("click", () => {
 	$("body").css("margin-left", "0");
 	$("canvas").css("display", "block");
 	$(".surgeryStats").css("display", "inline-block");
+		
+	const health = setInterval(() => {
+		patient.health -= 10;
+		$(".surgStat").eq(0).text(`Health: ${patient.health}`)
+	}, 1000);
 	// console.log("clicked")
 	const game = setInterval(() => {
 		//game disappears after 30 seconds
@@ -73,8 +78,20 @@ $("#gameStart").on("click", () => {
 		$(".gameContainer").css("display", "grid");
 		$(".surgeryStats").css("display", "none");
 		$("body").css("margin-top", "0");
+		alert("Surgery complete");
+		//results of surgery what happens
+		if(patient.health <= 0){
+			alert("Your patient has died!")
+		} else if (patient.health > 0){
+			alert("The patient has survived the surgery");
+		}
+
+		patient.health = 100;
 		clearInterval(game);
+		clearInterval(health);
+		
 	}, 30000);
+	init();// inits on each surgery click start
 });
 
 //surgery room to instructions
@@ -90,18 +107,17 @@ $(".instructionsButton").on("click", ()=>{
 });
 
 //exitSurgery
-$(".exitGame").on("click", ()=>{
-	//game exits
-	$("canvas").css("display", "none");
-	$(".gameContainer").css("display", "grid");
-	$(".surgeryStats").css("display", "none");
-	$("body").css("margin-top", "0");
-	clearInterval(game);
-});
+// $(".exitGame").on("click", ()=>{
+// 	//game exits
+// 	$("canvas").css("display", "none");
+// 	$(".gameContainer").css("display", "grid");
+// 	$(".surgeryStats").css("display", "none");
+// 	$("body").css("margin-top", "0");
+// });
 
 
 // stats for game live
-$(".surgStat").eq(0).text(`Health: ${patient.health}`)
+
 
 
 
@@ -285,10 +301,21 @@ function Circle(x, y, radius, color) {
 		if (getDistance(mouse.x, mouse.y, this.x, this.y) < 130 && this.opacity < 0.5) {
 			// console.log("collided")
 			this.opacity += .02;
+			if (getDistance(mouse.x, mouse.y, this.x, this.y) < 30) {
+				if (this.color === "#FF0000"){
+				// console.log("inside bloodcell");
+					this.color = "blue";
+				//updates health issues
+					if(patient.health < 100){
+						patient.health += 5;
+						$(".surgStat").eq(0).text(`Health: ${patient.health}`)
+					}
+				}
+			}
 		} else if (this.opacity > 0) {
 			this.opacity -= .02;
 			this.opacity = Math.max(0, this.opacity);
-		}
+		} 
 
 
 		//set velocity
