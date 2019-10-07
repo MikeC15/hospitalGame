@@ -12,7 +12,7 @@ const doctor = {
 	damage: 5,
 	patientKills: 0,
 	performSurgery(){
-		//THIS WILL POP UP DIALOG EVERY 10 SECONDS TO MAKE A BIG IMPACT ON SURGERY
+		//THIS WILL POP UP DIALOG EVERY 10 SECONDS TO MAKE A BIG IMPACT ON SURGERY, only way to kill is failing these.
 	},
 }
 
@@ -129,7 +129,7 @@ const c = canvas.getContext("2d");
 
 window.addEventListener("mousemove", function (e) {
 	mouse.x = event.x;
-	mouse.y = event.y;
+	mouse.y = event.y - 40;
 });
 
 
@@ -282,13 +282,14 @@ function Circle(x, y, radius, color) {
 		}
 
 		//mouse collision detection
-		if (getDistance(mouse.x, mouse.y, this.x, this.y) < 100 && this.opacity < 0.5) {
+		if (getDistance(mouse.x, mouse.y, this.x, this.y) < 130 && this.opacity < 0.5) {
 			// console.log("collided")
 			this.opacity += .02;
 		} else if (this.opacity > 0) {
 			this.opacity -= .02;
 			this.opacity = Math.max(0, this.opacity);
 		}
+
 
 		//set velocity
 		this.x += this.velocity.x;
@@ -309,8 +310,29 @@ function Circle(x, y, radius, color) {
 	}
 }
 
+function Doc(x, y, radius, color) {
+	this.x = x;
+	this.y = y;
+	this.radius = radius;
+	this.color = color;
+	this.update = function () {
+		this.draw();
+	};
+	this.draw = function () {
+		c.beginPath();
+		c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+		// c.strokeStyle = "red";
+		// c.stroke();
+		c.fillStyle = this.color;
+		c.fill();
+		c.closePath();
+	};
+}
+
+
 
 //implementation portion
+let doc;
 let circlesArray;
 function init() {
 	circlesArray = [];
@@ -332,6 +354,7 @@ function init() {
 
 		circlesArray.push(new Circle(x, y, radius, color))
 	}
+	doc = new Doc(300, 300, 10, "blue");
 };
 
 
@@ -341,6 +364,9 @@ function animate() {
 	circlesArray.forEach(circle => {
 		circle.update(circlesArray);
 	});
+	doc.x = mouse.x;
+	doc.y = mouse.y;
+	doc.update();
 	// circle1.update();
 	// circle2.x = mouse.x;
 	// circle2.y = mouse.y;
