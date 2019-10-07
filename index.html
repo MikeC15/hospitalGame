@@ -8,6 +8,14 @@
 	</head>
 	<body>
 
+		<div class="surgeryStats">
+			<div class="surgStat">STATISTICS</div>
+			<div class="surgStat">STATISTICS</div>
+			<div class="surgStat">STATISTICS</div>
+			<div class="surgStat">STATISTICS</div>
+			<button class="exitGame">Exit Surgery</button>
+		</div>
+
 		<!-- START SCREEN -->
 		<div class="gameStartScreen">
 			<header id="title">End of the Road Asylum</header>
@@ -39,14 +47,31 @@
 			<header class="header"></header>
 			<aside class="sidebar"></aside>
 			<div class="player">
-				<img style="border:0px; height:200px;" src="https://thumbs.dreamstime.com/z/doctor-pixel-art-isolated-white-background-physician-game-style-illustration-medic-vector-design-funny-bit-people-86619973.jpg" />
+				<img style="border:0px; height:200px;" src="img/HDoc1.png" />
+			</div>
+			<div class = "stats">
+				<p class = "stat">Put stats here</p>
 			</div>
 			<div class="patient">
-				<img style="border:0px; height:200px;" src="img/HPatientGood.jpg">
+				<img style="border:0px; height:300px;" src="img/HPatient.png">
 			</div>
 			<button id="game-end">Click to return to title.</button>
+			<button id ="gameStart">Begin!</button>
+			<button id="gameRules">Surgery Rules</button>
+			
 		</div>
 
+		<!-- Surgery direction div -->
+		<div class="gameInstructions">
+			<p>You are the surgeon's blue gloved hand. You will see a mix of blood cells and bleeders in the patient. 
+				You have 30 seconds to save your patient. Click brightest red bleeders to stop your patient from dying. 
+				Keep an eye on the patients health level. If they reach 0 they die. The health will drop more slowly for each bleeder stopped. 
+				If you stop 10 bleeders you win the surgery.</p>
+			<button class="instructionsButton">Back to surgery room</button>
+		</div>
+
+
+		<canvas></canvas>
 
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js'></script>
 		<script type="text/javascript" src="js/app.js"></script>

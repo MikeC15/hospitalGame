@@ -4,7 +4,6 @@
 }
 
 body {
-	background-color: black;
 	background-image: url("../img/HBG.gif");
 	background-repeat: no-repeat;
 	font-family: "zombieGuts";
@@ -36,6 +35,34 @@ header {
 						 "NG HTP E"
 	
 	
+}
+#title {
+	grid-area: T;
+	margin-top: 4%;
+}
+#game-start {
+	grid-area: NG;
+	border: ridge 10px rgb(47, 33, 55);
+	border-radius: 5%;
+	background-color: rgba(133, 98, 135,.85);
+	font-family: "zombieGuts";
+	margin: 0 2% 6px 2%;
+}
+#how-to-play {
+	grid-area: HTP;
+	border: ridge 10px rgb(47, 33, 55);
+	border-radius: 5%;
+	background-color: rgba(133, 98, 135,.85);
+	font-family: "zombieGuts";
+	margin: 0 2% 6px 2%;
+}
+#exit {
+	grid-area: E;
+	border: ridge 10px rgb(47, 33, 55);
+	border-radius: 5%;
+	background-color: rgba(133, 98, 135,.85);
+	font-family: "zombieGuts";
+	margin: 0 2% 6px 2%;
 }
 
 .officeContainer {
@@ -100,56 +127,66 @@ header {
 	display: none;
 	grid-template-columns: 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-rows: 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-	grid-template-areas: ". . . . . . . endButton"
+	grid-template-areas: "stats . . . . . . endButton"
+						 ". . . . . . . startButton"
+						 ". . . . . . . rules"
 						 ". . . . . . . ."
-						 ". . . . . . . ."
-						 ". . . . . . . ."
-						 ". . . patient . . . ."
-						 ". . . . . player . ."
-						 ". . . . . . . ."
+						 ". patient patient patient . . . ."
+						 ". patient patient patient player player . ."
+						 ". . . . player player . ."
 						 ". . . . . . . ."
 }
-
-.officeContainer {
-	display: none;
-}
-
 .player {
 	grid-area: player;
 }
 .patient {
 	grid-area: patient;
 }
-
-#title {
-	grid-area: T;
-	margin-top: 4%;
-}
-#game-start {
-	grid-area: NG;
-	border: ridge 10px rgb(47, 33, 55);
-	border-radius: 5%;
-	background-color: rgba(133, 98, 135,.85);
-	font-family: "zombieGuts";
-	margin-bottom: 6px;
-}
-#how-to-play {
-	grid-area: HTP;
-	border: ridge 10px rgb(47, 33, 55);
-	border-radius: 5%;
-	background-color: rgba(133, 98, 135,.85);
-	font-family: "zombieGuts";
-	margin-bottom: 6px;
-}
-#exit {
-	grid-area: E;
-	border: ridge 10px rgb(47, 33, 55);
-	border-radius: 5%;
-	background-color: rgba(133, 98, 135,.85);
-	font-family: "zombieGuts";
-	margin-bottom: 6px;
+.stats {
+	grid-area: stats;
 }
 #game-end {
 	grid-area: endButton
 }
+#gameStart {
+	grid-area: startButton;
+}
+#gameRules {
+	grid-area: rules
+}
 
+.surgeryStats {
+	display: none;
+	height: 20px;
+	width: 100%;
+	margin: 0;
+}
+.surgStat {
+	display: inline-block;
+	height: 20px;
+	width: 100px;
+	margin: 0 5%;
+}
+
+
+.gameInstructions {
+	background-color: rgba(133, 98, 135,.85);
+	position: absolute;
+    top: 0;
+    bottom: 15%;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 333px;
+	margin: auto;
+	border: ridge 10px rgb(47, 33, 55);
+	border-radius: 5%;
+	display:none;
+}
+
+
+canvas {
+	border: 1px solid black;
+	background-color: black;
+	display: none;
+}
