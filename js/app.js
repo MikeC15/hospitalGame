@@ -12,6 +12,8 @@ const patient ={
 const doctor = {
 	damage: 10,
 	patientKills: 0,
+	money: 0,
+	experience: 0,
 	performSurgery(){
 		//THIS WILL POP UP DIALOG EVERY 10 SECONDS TO MAKE A BIG IMPACT ON SURGERY, only way to kill is failing these.
 	},
@@ -85,12 +87,15 @@ $("#gameStart").on("click", () => {
 			alert("Your patient has died!")
 			$(".gameContainer").css("display", "none");
 			$(".officeContainer").css("display", "grid");
+			doctor.patientKills++;
 
 		} else if (patient.newHealth > 0){
 			alert("The patient has survived the surgery");
 			$(".gameContainer").css("display", "none");
 			$(".officeContainer").css("display", "grid");
-			
+			doctor.money += 100;
+			doctor.experience += 10;
+
 		}
 
 		patient.newHealth = patient.initialHealth;
