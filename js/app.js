@@ -15,6 +15,7 @@ const doctor = {
 	money: 0,
 	experience: 0,
 	surgerySuccess: false,
+	repair: 5,
 	performSurgery(){
 		//THIS WILL POP UP DIALOG EVERY 10 SECONDS TO MAKE A BIG IMPACT ON SURGERY, only way to kill is failing these.
 	},
@@ -187,7 +188,7 @@ $(".item2").on("click", () => {
 		$(".officeContainer").css("display", "grid");
 		$(".sidebarLeftOffice").append($("#item2").attr("height", "75px"));
 		$(".par2").text("PURCHASED");
-
+		doctor.repair = 10;
 
 	} else {
 		alert("Sorry, you haven't earned the money for that item");
@@ -399,7 +400,7 @@ function Circle(x, y, radius, color) {
 					this.color = "blue";
 				//updates health issues
 					if(patient.newHealth < 100){
-						patient.newHealth += 5;
+						patient.newHealth += doctor.repair;
 						$(".surgStat").eq(0).text(`Health: ${patient.newHealth}`)
 					}
 				}
