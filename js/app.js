@@ -107,7 +107,7 @@ $("#gameStart").on("click", () => {
 		$(".gameContainer").css("display", "grid");
 		$(".surgeryStats").css("display", "none");
 		$("body").css("margin-top", "0");
-		alert("Surgery complete");
+		// alert("Surgery complete");
 		//results of surgery what happens
 		if(patient.newHealth <= 0){
 			// alert("Your patient has died!")
@@ -117,6 +117,14 @@ $("#gameStart").on("click", () => {
 			$(".outcome").text("Surgery Outcome: Time of Death: "+ time);
 			doctor.patientKills++;
 			$(".statKills").text(`Patient Deaths: ${doctor.patientKills}`);
+			if(doctor.patientKills === 5){
+				//
+				//
+				//    END GAME HERE!
+				//
+				//
+				//
+			}
 
 		} else if (patient.newHealth > 0){
 			// alert("The patient has survived the surgery");
@@ -177,6 +185,8 @@ $(".item1").on("click", () => {
 		$(".sidebarLeftOffice").append($("#item1").attr("height", "75px"));
 		$(".par1").text("PURCHASED");
 		colors[2] = "#FF6F2E";
+		doctor.money -= 100;
+		$(".statMoney").text(`Doctor Money: ${doctor.money}`);
 
 	}else {
 		alert("Sorry, you haven't earned the money for that item");
@@ -184,12 +194,14 @@ $(".item1").on("click", () => {
 });
 
 $(".item2").on("click", () => {
-	if (doctor.money >= 100) {
+	if (doctor.money >= 200) {
 		$(".shopContainer").css("display", "none");
 		$(".officeContainer").css("display", "grid");
 		$(".sidebarLeftOffice").append($("#item2").attr("height", "75px"));
 		$(".par2").text("PURCHASED");
-		doctor.repair = 10;
+		doctor.repair = 8;
+		doctor.money -= 200;
+		$(".statMoney").text(`Doctor Money: ${doctor.money}`);
 
 	} else {
 		alert("Sorry, you haven't earned the money for that item");
@@ -197,12 +209,14 @@ $(".item2").on("click", () => {
 });
 
 $(".item3").on("click", () => {
-	if (doctor.money >= 200) {
+	if (doctor.money >= 100) {
 		$(".shopContainer").css("display", "none");
 		$(".officeContainer").css("display", "grid");
 		$(".sidebarLeftOffice").append($("#item3").attr("height", "75px"));
 		$(".par3").text("PURCHASED");
 		patient.speed = 3;
+		doctor.money -= 100;
+		$(".statMoney").text(`Doctor Money: ${doctor.money}`);
 
 
 	} else {
@@ -216,6 +230,9 @@ $(".item4").on("click", () => {
 		$(".officeContainer").css("display", "grid");
 		$(".sidebarLeftOffice").append($("#item4").attr("height", "75px"));
 		$(".par4").text("PURCHASED");
+		doctor.damage = 8;
+		doctor.money -= 200;
+		$(".statMoney").text(`Doctor Money: ${doctor.money}`);
 
 	} else {
 		alert("Sorry, you haven't earned the money for that item");
