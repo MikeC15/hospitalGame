@@ -268,20 +268,33 @@ header {
 }
 .item1{
 	grid-area: item1;
+	margin: 0 auto;
+	font-size: 12px;
+	
 }
 .item2{
 	grid-area: item2;
+	margin: 0 auto;
+	font-size: 12px;
 }
 .item3{
 	grid-area: item3;
+	margin: 0 auto;
+	font-size: 12px;
 }
 .item4{
 	grid-area: item4;
+	margin: 0 auto;
+	font-size: 12px;
 }
 #exitShop {
 	grid-area: exit;
+	margin: 0 auto;
 	
 }
+/* .pars {
+	float: right;
+} */
 
 
 canvas {

@@ -158,8 +158,57 @@ $("#how-to-play").on("click", () => {
 	alert("Just play the game.");
 })
 
-// stats for game live
+//shop items
 
+$(".item1").on("click", () => {
+	if(doctor.money >= 100){
+		$(".shopContainer").css("display", "none");
+		$(".officeContainer").css("display", "grid");
+		$(".sidebarLeftOffice").append($("#item1").attr("height", "75px"));
+		$(".par1").text("PURCHASED");
+
+	}else {
+		alert("Sorry, you haven't earned the money for that item");
+	}
+});
+
+$(".item2").on("click", () => {
+	if (doctor.money >= 100) {
+		$(".shopContainer").css("display", "none");
+		$(".officeContainer").css("display", "grid");
+		$(".sidebarLeftOffice").append($("#item2").attr("height", "75px"));
+		$(".par2").text("PURCHASED");
+
+
+	} else {
+		alert("Sorry, you haven't earned the money for that item");
+	}
+});
+
+$(".item3").on("click", () => {
+	if (doctor.money >= 200) {
+		$(".shopContainer").css("display", "none");
+		$(".officeContainer").css("display", "grid");
+		$(".sidebarLeftOffice").append($("#item3").attr("height", "75px"));
+		$(".par3").text("PURCHASED");
+
+
+	} else {
+		alert("Sorry, you haven't earned the money for that item");
+	}
+});
+
+$(".item4").on("click", () => {
+	if (doctor.money >= 200) {
+		$(".shopContainer").css("display", "none");
+		$(".officeContainer").css("display", "grid");
+		$(".sidebarLeftOffice").append($("#item4").attr("height", "75px"));
+		$(".par4").text("PURCHASED");
+
+	} else {
+		alert("Sorry, you haven't earned the money for that item");
+	}
+});
 
 
 

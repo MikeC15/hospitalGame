@@ -40,3 +40,24 @@ takes big mistakes to kill
 stretch
 .If player reaches level 10? change environments
 .was thinking of having zombie apocalypse middle of game and changes all stats?? NOT SURE about this, zombie patients would have much different surgeries in the opposite way of before
+
+
+
+
+//add music
+
+item ideas
+
+GLASSES that get rid of other bright red color from cell options
+"You can finally see the differences in the cell"
+
+CRYO-GUN that slows the cells down
+"Those cells were moving so fast, lets slow them down"
+
+SCALPEL that gives more life per cell repair
+"You fix things properly now that you stopped using that butter knife"
+
+STETHOSCOPE that slows down damage
+"You can hear the location of the bleed and start there so they dont take as much damage"
+
+
