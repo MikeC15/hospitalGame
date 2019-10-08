@@ -20,6 +20,14 @@ const doctor = {
 	},
 }
 
+const colors = [
+	"#800000",
+	"#400000",
+	"#BF0000",
+	"#FF0000",//this will be target
+	"#F2F2F2",
+];
+
 
 // BUTTON FUNCTIONS
 
@@ -166,6 +174,7 @@ $(".item1").on("click", () => {
 		$(".officeContainer").css("display", "grid");
 		$(".sidebarLeftOffice").append($("#item1").attr("height", "75px"));
 		$(".par1").text("PURCHASED");
+		colors[2] = "#FF6F2E";
 
 	}else {
 		alert("Sorry, you haven't earned the money for that item");
@@ -247,14 +256,6 @@ window.addEventListener("resize", function () {
 	init();
 });
 
-
-const colors = [
-	"#800000",
-	"#400000",
-	"#BF0000",
-	"#FF0000",//this will be target
-	"#F2F2F2",
-];
 
 
 const mouse = {
