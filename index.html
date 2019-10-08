@@ -3,7 +3,6 @@
 	<head>
 		<title>End of the Road Asylum</title>
 
-
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
@@ -28,17 +27,30 @@
 
 		<!-- DOC OFFICE -->
 		<div class="officeContainer">
-			<header class="headerOffice">THE DOC IS IN</header>
+			<header class="headerOffice">The Doctor is in</header>
 			<aside class="sidebarLeftOffice">
-				<p>Place doc stats and bought items here</p>
+				<p class="statMoney">Doctor Money: 0</p>
+				<p class="statKills">Patient Deaths: 0</p>
+				<p class="outcome">Surgery Outcome: First Operation Pending</p>
 			</aside>
 
 			<aside class="sidebarRightOffice">
-				<button id="officeToMain">Return to Title</button>
 				<button id="officeToSurgery">Head to O.R.</button>
-				<p>computer and shop</p>
+				<button id="shopButton">Shop</button>
+				<button id="officeToMain">Return to Title</button>
 			</aside>
 
+		</div>
+
+		<!-- shop -->
+		<div class="shopContainer">
+			<div class="item item1">
+				<i class="fas fa-syringe"></i>
+			</div>
+			<div class="item item2"></div>
+			<div class="item item3"></div>
+			<div class="item item4"></div>
+			<button id="exitShop">Exit Shop</button>
 		</div>
 
 
@@ -49,21 +61,18 @@
 			<div class="player">
 				<img style="border:0px; height:200px;" src="img/HDoc1.png" />
 			</div>
-			<div class = "stats">
-				<p class = "stat">Put stats here</p>
-			</div>
 			<div class="patient">
 				<img style="border:0px; height:300px;" src="img/HPatient.png">
 			</div>
-			<button id="game-end">Click to return to title.</button>
-			<button id ="gameStart">Begin operating!</button>
+			<button id ="gameStart">Begin Operating</button>
 			<button id="gameRules">Surgery Rules</button>
+			<button id="game-end">Return to Title</button>
 			
 		</div>
 
 		<!-- Surgery direction div -->
 		<div class="gameInstructions">
-			<p>You are the surgeon's blue gloved hand. You will see a mix of blood cells and bleeders in the patient. 
+			<p id="instructionButton">You are the surgeon's blue gloved hand. You will see a mix of blood cells and bleeders in the patient. 
 				You have 30 seconds to save your patient. Hover over the brightest red bleeders to stop your patient from dying, gain some health back and they will turn blue. 
 				Keep an eye on the patients health level, it will drop every second. If they finish surgery with health 0 or under they will die, and it will be on your permanent record.
 				If they have health left at the end of surgery, they survive and you will gain money to spend on upgrades. Health CAN go negative as long as you resuscitate them in time! Careful, if you kill 5 patients you will lose your license!</p>

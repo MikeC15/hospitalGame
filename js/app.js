@@ -14,6 +14,7 @@ const doctor = {
 	patientKills: 0,
 	money: 0,
 	experience: 0,
+	surgerySuccess: false,
 	performSurgery(){
 		//THIS WILL POP UP DIALOG EVERY 10 SECONDS TO MAKE A BIG IMPACT ON SURGERY, only way to kill is failing these.
 	},
@@ -24,7 +25,7 @@ const doctor = {
 
 //start screen to office
 $("#game-start").on("click", ()=>{
-	$(".gameStartScreen").css("display", "none")
+	$(".gameStartScreen").css("display", "none");
 	const game = setInterval(() => {
 		//display game div after x seconds
 		$(".officeContainer").css("display", "grid");
@@ -34,7 +35,7 @@ $("#game-start").on("click", ()=>{
 
 // surgery to start screen
 $("#game-end").on("click", ()=>{
-	$(".gameContainer").css("display", "none")
+	$(".gameContainer").css("display", "none");
 	const game = setInterval(() => {
 		//display start screen div after x seconds
 		$(".gameStartScreen").css("display", "grid");
@@ -44,7 +45,7 @@ $("#game-end").on("click", ()=>{
 
 //office to surgery
 $("#officeToSurgery").on("click", () => {
-	$(".officeContainer").css("display", "none")
+	$(".officeContainer").css("display", "none");
 	const game = setInterval(() => {
 		//display game div after x seconds
 		$(".gameContainer").css("display", "grid");
@@ -54,13 +55,28 @@ $("#officeToSurgery").on("click", () => {
 
 //office to main
 $("#officeToMain").on("click", () => {
-	$(".officeContainer").css("display", "none")
+	$(".officeContainer").css("display", "none");
 	const game = setInterval(() => {
 		//display game div after x seconds
 		$(".gameStartScreen").css("display", "grid");
 		clearInterval(game);
 	}, 1000);
 });
+
+//Office shop
+$("#shopButton").on("click", ()=>{
+	$(".officeContainer").css("display", "none");
+	$(".shopContainer").css("display", "grid");
+});
+
+//exit shop
+$("#exitShop").on("click", () => {
+	$(".shopContainer").css("display", "none");
+	$(".officeContainer").css("display", "grid");
+});
+
+var today = new Date();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
 //begin surgery in surgery room
 $("#gameStart").on("click", () => {
@@ -84,17 +100,23 @@ $("#gameStart").on("click", () => {
 		alert("Surgery complete");
 		//results of surgery what happens
 		if(patient.newHealth <= 0){
-			alert("Your patient has died!")
+			// alert("Your patient has died!")
 			$(".gameContainer").css("display", "none");
 			$(".officeContainer").css("display", "grid");
+			// doctor.surgerySuccess = true;
+			$(".outcome").text("Surgery Outcome: Time of Death: "+ time);
 			doctor.patientKills++;
+			$(".statKills").text(`Patient Deaths: ${doctor.patientKills}`);
 
 		} else if (patient.newHealth > 0){
-			alert("The patient has survived the surgery");
+			// alert("The patient has survived the surgery");
 			$(".gameContainer").css("display", "none");
 			$(".officeContainer").css("display", "grid");
+			// doctor.surgerySuccess = false;
+			$(".outcome").text("Surgery Outcome: Successful Surgery");	
 			doctor.money += 100;
-			doctor.experience += 10;
+			$(".statMoney").text(`Doctor Money: ${doctor.money}`);
+			// doctor.experience += 10;
 
 		}
 

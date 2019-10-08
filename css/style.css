@@ -39,6 +39,9 @@ header {
 #title {
 	grid-area: T;
 	margin-top: 4%;
+	color: #811F18;
+	-webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
 }
 #game-start {
 	grid-area: NG;
@@ -87,6 +90,9 @@ header {
 }
 .headerOffice{
 	grid-area: head;
+	color: #811F18;
+	-webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
 }
 .sidebarLeftOffice {
 	grid-area: left;
@@ -95,6 +101,9 @@ header {
 	font-family: "zombieGuts";
 	margin: 8% 0 8% 8%;
 }
+.sidebarLeftOffice * {
+	border: ridge 2px rgb(47, 33, 55); 
+}
 .sidebarRightOffice {
 	grid-area: right;
 	border: ridge 5px rgb(47, 33, 55);
@@ -102,25 +111,35 @@ header {
 	font-family: "zombieGuts";
 	margin: 8% 8% 8% 0;
 }
+.sidebarRightOffice * {
+	margin: 10px 0 10px 4px;
+	border: ridge 2px rgb(47, 33, 55);
+	border-radius: 5%;
+	background-color: rgba(133, 98, 135,.85);
+	font-family: "zombieGuts";
+	height: 60px;
+	width: 90%;
+}
+
 /* #officeToMain {
 	grid-area: ;
 }
 #officeToSurgery {
 	grid-area: ;
 } */
-#officeToMain, #officeToSurgery {
+/* #officeToMain, #officeToSurgery {
 	border: ridge 5px rgb(47, 33, 55);
 	border-radius: 5%;
 	background-color: rgba(133, 98, 135,.85);
 	font-family: "zombieGuts";
-}
+} */
 
 .gameContainer {
 	background-image: url("../img/HOperatingRoom.png");
 	background-repeat: no-repeat;
 	background-position: center;
-	background-color:rgb(190, 224, 253);
-	border: ridge 10px rgb(47, 33, 55);
+	background-color:rgba(190, 224, 253, .7);
+	border: ridge 10px rgb(123, 170, 214);
 	border-radius: 5%;
 	position: absolute;
 	top: 0;
@@ -133,9 +152,9 @@ header {
 	display: none;
 	grid-template-columns: 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-rows: 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-	grid-template-areas: "stats . . . . . . endButton"
-						 ". . . . . . . startButton"
-						 ". . . . . . . rules"
+	grid-template-areas: "stats . . . . . . ."
+						 ". . . . . . . ."
+						 ". . startButton . rules . endButton ."
 						 ". . . . . . . ."
 						 ". patient patient patient . . . ."
 						 ". patient patient patient player player . ."
@@ -153,24 +172,27 @@ header {
 }
 #game-end {
 	grid-area: endButton;
-	border: ridge 5px rgb(47, 33, 55);
+	border: ridge 5px rgb(123, 170, 214);
 	border-radius: 5%;
-	background-color: rgba(133, 98, 135,.85);
+	background-color: rgba(190, 224, 253,.85);
 	font-family: "zombieGuts";
+	margin: 5px 5px 5px 2px;
 }
 #gameStart {
 	grid-area: startButton;
-	border: ridge 5px rgb(47, 33, 55);
+	border: ridge 5px rgb(123, 170, 214);
 	border-radius: 5%;
-	background-color: rgba(133, 98, 135,.85);
+	background-color: rgba(190, 224, 253,.85);
 	font-family: "zombieGuts";
+	margin: 5px 5px 5px 2px;
 }
 #gameRules {
 	grid-area: rules;
-	border: ridge 5px rgb(47, 33, 55);
+	border: ridge 5px rgb(123, 170, 214);
 	border-radius: 5%;
-	background-color: rgba(133, 98, 135,.85);
+	background-color: rgba(190, 224, 253,.85);
 	font-family: "zombieGuts";
+	margin: 5px 5px 5px 2px;
 }
 
 .surgeryStats {
@@ -199,7 +221,66 @@ header {
 	margin: auto;
 	border: ridge 10px rgb(47, 33, 55);
 	border-radius: 5%;
-	display:none;
+	display: none;
+	align-content: center;
+  	justify-content: center;
+}
+.instructionsButton {
+	border: ridge 2px rgb(47, 33, 55);
+	border-radius: 5%;
+	background-color: rgba(133, 98, 135,.85);
+	font-family: "zombieGuts";
+	justify-self: center;
+}
+#instructionButton {
+	border: ridge 2px rgb(47, 33, 55);
+	border-radius: 5%;
+	background-color: rgba(133, 98, 135,.85);
+	font-family: "zombieGuts";
+	text-align: center;
+}
+
+.shopContainer {
+	background-color: rgba(133, 98, 135,.85);
+	position: absolute;
+    top: 0;
+    bottom: 15%;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 333px;
+	margin: auto;
+	border: ridge 10px rgb(47, 33, 55);
+	border-radius: 5%;
+	display: none;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 50px;
+	grid-template-areas: "item1 item2"
+						 "item3 item4"
+						 "exit exit"
+}
+.shopContainer * {
+	border: ridge 2px rgb(47, 33, 55);
+	border-radius: 5%;
+	background-color: rgba(133, 98, 135,.85);
+	font-family: "zombieGuts";
+	margin: 5px;
+}
+.item1{
+	grid-area: item1;
+}
+.item2{
+	grid-area: item2;
+}
+.item3{
+	grid-area: item3;
+}
+.item4{
+	grid-area: item4;
+}
+#exitShop {
+	grid-area: exit;
+	
 }
 
 
