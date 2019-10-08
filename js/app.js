@@ -7,6 +7,7 @@ const patient ={
 	procedure1: "Heart Transplant",
 	procedure2: "ex2",
 	procedure3: "ex3",
+	speed: 5,
 }
 
 const doctor = {
@@ -201,6 +202,7 @@ $(".item3").on("click", () => {
 		$(".officeContainer").css("display", "grid");
 		$(".sidebarLeftOffice").append($("#item3").attr("height", "75px"));
 		$(".par3").text("PURCHASED");
+		patient.speed = 3;
 
 
 	} else {
@@ -363,8 +365,8 @@ function Circle(x, y, radius, color) {
 	this.x = x;
 	this.y = y;
 	this.velocity = {
-		x: (Math.random() - 0.5) * 5,
-		y: (Math.random() - 0.5) * 5,
+		x: (Math.random() - 0.5) * patient.speed,
+		y: (Math.random() - 0.5) * patient.speed,
 	};
 	this.radius = radius;
 	this.color = color;
