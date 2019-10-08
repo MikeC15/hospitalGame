@@ -248,11 +248,12 @@ header {
     left: 0;
     right: 0;
     width: 50%;
-    height: 333px;
+    height: 400px;
 	margin: auto;
 	border: ridge 10px rgb(47, 33, 55);
 	border-radius: 5%;
 	display: none;
+	text-align: center;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 1fr 50px;
 	grid-template-areas: "item1 item2"
@@ -270,22 +271,28 @@ header {
 	grid-area: item1;
 	margin: 0 auto;
 	font-size: 12px;
+	display: block;	
+	width: 80%;
 	
 }
 .item2{
 	grid-area: item2;
 	margin: 0 auto;
 	font-size: 12px;
+	width: 80%;
 }
 .item3{
 	grid-area: item3;
 	margin: 0 auto;
 	font-size: 12px;
+	width: 80%;
 }
 .item4{
 	grid-area: item4;
 	margin: 0 auto;
 	font-size: 12px;
+		width: 80%;
+
 }
 #exitShop {
 	grid-area: exit;
