@@ -117,13 +117,10 @@ $("#gameStart").on("click", () => {
 			$(".outcome").text("Surgery Outcome: Time of Death: "+ time);
 			doctor.patientKills++;
 			$(".statKills").text(`Patient Deaths: ${doctor.patientKills}`);
-			if(doctor.patientKills === 5){
-				//
-				//
-				//    END GAME HERE!
-				//
-				//
-				//
+			if(doctor.patientKills === 3){
+				//ENDGAME
+				alert("The medical board has decided to revoke your license. Try again in a new life, good luck.")
+				location.reload();
 			}
 
 		} else if (patient.newHealth > 0){
@@ -265,7 +262,7 @@ const c = canvas.getContext("2d");
 
 window.addEventListener("mousemove", function (e) {
 	mouse.x = event.x;
-	mouse.y = event.y - 55;
+	mouse.y = event.y - 30;
 });
 
 
