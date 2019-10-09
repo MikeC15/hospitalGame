@@ -170,7 +170,7 @@ $("#exit").on("click", ()=>{
 })
 
 $("#how-to-play").on("click", () => {
-	alert("Just play the game.");
+	alert("We dont actually provide training for our surgeons.");
 })
 
 //shop items

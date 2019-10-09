@@ -86,7 +86,12 @@ header {
 	grid-template-columns: 100px 1fr 100px;
 	grid-template-rows: 50px 1fr;
 	grid-template-areas: "left head right"
-						 "left . right"
+						 "left D right"
+}
+#docsOff{
+	grid-area: D;
+	align-self: center;
+	justify-self: center;
 }
 .headerOffice{
 	grid-area: head;

@@ -35,7 +35,6 @@ interactive stop bleeders, health constant drain unless stopped bleeder
 .level up?? money?? buy new doctor tools??
 
 game over at 5 kills,
-takes big mistakes to kill
 
 stretch
 .If player reaches level 10? change environments
@@ -46,18 +45,8 @@ stretch
 
 //add music
 
-item ideas
+//add halfway through surgery dialog effect
 
-GLASSES that get rid of other bright red color from cell options
-"You can finally see the differences in the cell"
-
-CRYO-GUN that slows the cells down
-"Those cells were moving so fast, lets slow them down"
-
-SCALPEL that gives more life per cell repair
-"You fix things properly now that you stopped using that butter knife"
-
-STETHOSCOPE that slows down damage
-"You can hear the location of the bleed and start there so they dont take as much damage"
+//add doctor to his office, change his pic when he buys items
 
 
