@@ -29,6 +29,7 @@ const colors = [
 	"#FF0000",//this will be target
 	"#F2F2F2",
 ];
+const vid2 = document.getElementById("mainSound");
 
 
 // BUTTON FUNCTIONS
@@ -173,7 +174,7 @@ $("#exit").on("click", ()=>{
 })
 
 $("#how-to-play").on("click", () => {
-	alert("We dont actually provide training for our surgeons.");
+	vid2.play();
 })
 
 //shop items
@@ -378,6 +379,7 @@ function resolveCollision(particle, otherParticle) {
 
 const vid = document.getElementById("audios");
 vid.muted = true;
+
 
 function Circle(x, y, radius, color) {
 	this.x = x;

@@ -319,3 +319,6 @@ canvas {
 #audios {
 	display: none;
 }
+#mainSound {
+	display: none;
+}
