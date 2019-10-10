@@ -159,15 +159,6 @@ $(".instructionsButton").on("click", ()=>{
 	$(".gameContainer").css("display", "grid");
 });
 
-//exitSurgery
-// $(".exitGame").on("click", ()=>{
-// 	//game exits
-// 	$("canvas").css("display", "none");
-// 	$(".gameContainer").css("display", "grid");
-// 	$(".surgeryStats").css("display", "none");
-// 	$("body").css("margin-top", "0");
-// });
-
 $("#exit").on("click", ()=>{
 	alert("HAHAHAHA YOU CAN NEVER LEAVE THE ASYLUM!");
 	location.reload();

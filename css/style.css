@@ -50,6 +50,11 @@ header {
 	background-color: rgba(133, 98, 135,.85);
 	font-family: "zombieGuts";
 	margin: 0 2% 6px 2%;
+
+}
+#game-start:hover{
+		background-color: #811F18;
+
 }
 #how-to-play {
 	grid-area: HTP;
@@ -59,6 +64,10 @@ header {
 	font-family: "zombieGuts";
 	margin: 0 2% 6px 2%;
 }
+#how-to-play:hover{
+		background-color: #811F18;
+
+}
 #exit {
 	grid-area: E;
 	border: ridge 10px rgb(47, 33, 55);
@@ -66,6 +75,10 @@ header {
 	background-color: rgba(133, 98, 135,.85);
 	font-family: "zombieGuts";
 	margin: 0 2% 6px 2%;
+}
+#exit:hover{
+		background-color: #811F18;
+
 }
 
 .officeContainer {
@@ -125,6 +138,9 @@ header {
 	height: 60px;
 	width: 90%;
 }
+.sidebarRightOffice *:hover{
+	background-color: #811F18;
+}
 
 /* #officeToMain {
 	grid-area: ;
@@ -183,6 +199,9 @@ header {
 	font-family: "zombieGuts";
 	margin: 5px 5px 5px 2px;
 }
+#game-end:hover{
+	background-color:#7BAAD6;
+}
 #gameStart {
 	grid-area: startButton;
 	border: ridge 5px rgb(123, 170, 214);
@@ -191,6 +210,9 @@ header {
 	font-family: "zombieGuts";
 	margin: 5px 5px 5px 2px;
 }
+#gameStart:hover{
+	background-color:#7BAAD6;
+}
 #gameRules {
 	grid-area: rules;
 	border: ridge 5px rgb(123, 170, 214);
@@ -198,6 +220,9 @@ header {
 	background-color: rgba(190, 224, 253,.85);
 	font-family: "zombieGuts";
 	margin: 5px 5px 5px 2px;
+}
+#gameRules:hover{
+	background-color:#7BAAD6;
 }
 
 .surgeryStats {
@@ -273,6 +298,9 @@ header {
 	font-family: "zombieGuts";
 	margin: 5px;
 }
+#item1:hover, #item2:hover, #item3:hover, #item4:hover{
+	background-color: #811F18;
+}
 .item1{
 	grid-area: item1;
 	margin: 0 auto;
@@ -303,11 +331,10 @@ header {
 #exitShop {
 	grid-area: exit;
 	margin: 0 auto;
-	
 }
-/* .pars {
-	float: right;
-} */
+#exitShop:hover{
+	background-color: #811F18;
+}
 
 
 canvas {
