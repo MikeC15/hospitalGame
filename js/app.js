@@ -231,7 +231,9 @@ $(".item4").on("click", () => {
 	}
 });
 
-
+$("#docsOff").on("click", ()=>{
+	alert("DON'T TOUCH ME!!!");
+})
 
 
 
