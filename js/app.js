@@ -95,7 +95,7 @@ $("#gameStart").on("click", () => {
 	$("body").css("margin-left", "0");
 	$("canvas").css("display", "block");
 	$(".surgeryStats").css("display", "inline-block");
-		
+		vid.muted = false;
 	const health = setInterval(() => {
 		patient.newHealth -= doctor.damage;
 		$(".surgStat").eq(0).text(`Health: ${patient.newHealth}`)
@@ -117,6 +117,7 @@ $("#gameStart").on("click", () => {
 			$(".outcome").text("Surgery Outcome: Time of Death: "+ time);
 			doctor.patientKills++;
 			$(".statKills").text(`Patient Deaths: ${doctor.patientKills}`);
+			vid.muted = true;
 			if(doctor.patientKills === 3){
 				//ENDGAME
 				alert("The medical board has decided to revoke your license. Try again in a new life, good luck.")
@@ -132,6 +133,8 @@ $("#gameStart").on("click", () => {
 			doctor.money += 100;
 			$(".statMoney").text(`Doctor Money: ${doctor.money}`);
 			// doctor.experience += 10;
+			vid.muted = true;
+
 
 		}
 
@@ -373,7 +376,8 @@ function resolveCollision(particle, otherParticle) {
 }
 // Copied ^^^
 
-
+const vid = document.getElementById("audios");
+vid.muted = true;
 
 function Circle(x, y, radius, color) {
 	this.x = x;
@@ -406,6 +410,8 @@ function Circle(x, y, radius, color) {
 			this.velocity.y = -this.velocity.y;
 		}
 
+
+		
 		//mouse collision detection
 		if (getDistance(mouse.x, mouse.y, this.x, this.y) < 130 && this.opacity < 0.5) {
 			// console.log("collided")
@@ -414,6 +420,7 @@ function Circle(x, y, radius, color) {
 				if (this.color === "#FF0000"){
 				// console.log("inside bloodcell");
 					this.color = "blue";
+					vid.play();
 				//updates health issues
 					if(patient.newHealth < 100){
 						patient.newHealth += doctor.repair;
