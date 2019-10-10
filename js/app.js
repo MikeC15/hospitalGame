@@ -230,9 +230,15 @@ $(".item4").on("click", () => {
 		alert("Sorry, you haven't earned the money for that item");
 	}
 });
-
+//easter
 $("#docsOff").on("click", ()=>{
-	alert("DON'T TOUCH ME!!!");
+	alert("I'M CONCENTRATING, DON'T TOUCH ME!!!");
+})
+$(".patient").on("click", ()=>{
+	alert("*cough* *cough* *cough* please help... me ..*cough* I think I might... die soon.");
+})
+$(".player").on("click", () => {
+	alert("I SAID DONT ****ING TOUCH ME WHILE IM ABOUT TO OPERATE.");
 })
 
 
